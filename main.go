@@ -1,6 +1,9 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"time"
+)
 
 type (
 	User struct {
@@ -12,5 +15,20 @@ type (
 )
 
 func main() {
+	users := []User{
+		{
+			Name:      "John",
+			Age:       20,
+			Email:     "john@example.com",
+			CreatedAt: time.Now(),
+		},
+		{
+			Name:      "Sammy",
+			Age:       21,
+			Email:     "sammy@example.com",
+			CreatedAt: time.Now().Add(-24 * time.Hour),
+		},
+	}
 
+	fmt.Println(users)
 }
